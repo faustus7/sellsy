@@ -61,7 +61,9 @@ module Sellsy
           }
       }
 
-      Sellsy::Api.request command
+      result = Sellsy::Api.request command
+
+      @id = JSON.parse(result)['response']['doc_id']
     end
 
     def update
